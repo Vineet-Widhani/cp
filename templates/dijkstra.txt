@@ -1,0 +1,10 @@
+vector<pair<int, int>> adj[1005];
+void dijkstr(pair<int, int> s, int n, int k, int t){
+    priority_queue<pair<int, pair<int, int>>, vector<pair<int, pair<int, int>>>, greater <pair<int, pair<int, int>>>>  q;
+
+    q.push({0, s});
+    while(!q.empty()){
+        pair<int, pair<int, int>> curr = q.top(); q.pop();
+
+    }
+}

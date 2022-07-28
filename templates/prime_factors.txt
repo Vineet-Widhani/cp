@@ -1,0 +1,19 @@
+bool prime[100001];
+vector<int> pri;
+void SieveOfEratosthenes()
+{
+
+    memset(prime, true, sizeof(prime));
+    prime[1] = false;
+
+    for (int p = 2; p * p < 1000000001; p++)
+    {
+        if (prime[p] == true)
+        {
+            pri.push_back(p);
+            for (int i = 2 * p; i < 100001; i += p)
+                prime[i] = false;
+        }
+    }
+
+}

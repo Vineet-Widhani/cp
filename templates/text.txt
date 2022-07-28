@@ -1,0 +1,46 @@
+int n; cin >> n;
+//    int a[n][5];
+//    for(int i = 0; i < n; ++i){
+//        for(int j = 0; j < 5; ++j){
+//            cin >> a[i][j];
+//        }
+//    }
+//    int dp[n]; memset(dp, 0, sizeof(dp));
+//    for(int j = 0; j < 5; ++j){
+//        int mn = a[0][j], ind = 0;
+//        for(int i = 1; i < n; ++i){
+//            if(a[i][j] < mn){
+//                mn = a[i][j]; ind = i;
+//            }
+//        }
+//        dp[ind]++;
+//    }
+//    int mx = 0, ind = -1;
+//    for(int i = 0; i < n; ++i){
+//        if(dp[i] > mx){
+//            mx = dp[i]; ind = i;
+//        }
+//    }
+//    if(mx >= 3)cout << ind + 1 << endl;
+//    else cout << "-1" << endl;
+
+
+//    int n, k; cin >> n >> k;
+//    vector<float> area(n);
+//    for(auto i : area)cin >> i;
+//    vector<float> price(n);
+//    for(auto i : price)cin >> i;
+//    vector<vector<pair<float, float>>> dp(n + 1, vector<pair<float, float>> (k + 1, {0, 0}));
+//    for(int i = 1; i <= n; ++i){
+//        for(int j = 1; j <= k; ++j){
+//            dp[i][j] = dp[i - 1][j];
+//            if(dp[i][j].first == 0 || dp[i][j].second == 0 || ((price[i - 1] + dp[i - 1][j - 1].first) / (area[i - 1] + dp[i - 1][j - 1].second)) > (dp[i][j].first / dp[i][j].second)){
+//                dp[i][j].first = price[i - 1] + dp[i - 1][j - 1].first;
+//                dp[i][j].second = area[i - 1] + dp[i - 1][j - 1].second;
+//            }
+//        }
+//    }
+//    cout << dp[n][k].first << endl;
+//    cout << dp[n][k].second << endl;
+//    cout << dp[n][k].first / dp[n][k].second << endl;
+

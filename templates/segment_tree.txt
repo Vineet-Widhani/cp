@@ -1,0 +1,53 @@
+struct SegmentTree {
+    int n;
+    vector<int64_t> T;
+    SegmentTree(int n) {
+        this->n = n;
+        T.assign(2 * n + 5, 0);
+    }
+    void UpdateforMin(int k, int x) {
+        k += n;
+        T[k] = x;
+        k = k >> 1;
+        while (k >= 1) {
+            T[k] = min(T[2 * k], T[2 * k + 1]);
+            k = k >> 1;
+        }
+    }
+    void UpdateforSum(int k, int x) {
+        k += n;
+        x = x - T[k];
+        while (k >= 1) {
+            T[k] += x;
+            k = k >> 1;
+        }
+    }
+    int64_t QueryforSum(int l, int r) {
+        l += n; r += n;
+        int64_t S = 0;
+        while (l <= r) {
+            if (l & 1) {
+                S += T[l++];
+            }
+            if (~r & 1) {
+                S += T[r--];
+            }
+            l = l >> 1; r = r >> 1;
+        }
+        return S;
+    }
+    int64_t QueryforMin(int l, int r) {
+        l += n; r += n;
+        int64_t S = INT_MAX;
+        while (l <= r) {
+            if (l & 1) {
+                S = min(S, T[l++]);
+            }
+            if (~r & 1) {
+                S = min(S, T[r--]);
+            }
+            l = l >> 1; r = r >> 1;
+        }
+        return S;
+    }
+};

@@ -1,0 +1,10 @@
+int pow_mod(int base, int exp, int mod) {
+    int res = 1;
+    while (exp > 0) {
+        if (exp % 2 == 1)
+            res= (res * base) % mod;
+        exp = exp >> 1;
+        base = (base * base) % mod;
+    }
+    return res;
+}

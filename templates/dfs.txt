@@ -1,0 +1,13 @@
+const int mx_val = 200005;
+vector<int> adj[mx_val];
+bool visited[mx_val];
+
+void dfs(int s){
+    visited[s] = true;
+    for(auto &i : adj[s]){
+        if(!visited[i]){
+            dfs(i);
+        }
+    }
+    return;
+}
