@@ -1,2 +1,6 @@
 # Project exclude paths
 /cmake-build-debug/
+/codeforces/1600_rating/CMakeLists.txt
+/codeforces/cf_round_810/CMakeLists.txt
+/codeforces/CMakeLists.txt
+/CMakeLists.txt

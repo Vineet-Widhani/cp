@@ -7,3 +7,4 @@ add_executable(main main.cpp)
 add_executable(main1 main1.cpp)
 
 add_subdirectory(cf_round_810)
+add_subdirectory(1600_rating)
